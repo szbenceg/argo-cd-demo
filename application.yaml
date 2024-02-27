@@ -1,23 +1,35 @@
 apiVersion: argoproj.io/v1alpha1
-kind: Application
+kind: ApplicationSet
 metadata:
-  name: myapp-argo-application
-  namespace: argocd
+  name: apps
 spec:
-  project: default
-
-  source:
-    repoURL: https://github.com/szbenceg/argo-cd-demo.git
-    targetRevision: HEAD
-    path: dev
-  destination: 
-    server: https://kubernetes.default.svc
-    namespace: myapp
-
-  syncPolicy:
-    syncOptions:
-    - CreateNamespace=true
-
-    automated:
-      selfHeal: true
-      prune: true
+  generators:
+    - git:
+        repoURL: https://github.com/szbenceg/argo-cd-demo.git
+        #Branch to use
+        revision: HEAD
+        directories:
+          #Path to the directory that includes directories to read as variables
+          - path: apps/*
+  template:
+    metadata:
+      #Basename is the name of the directory not the full path
+      name: '{{path.basename}}'
+    spec:
+      project: default
+      source:
+        #Source repo
+        repoURL: https://github.com/szbenceg/argo-cd-demo.git
+        targetRevision: HEAD
+        #Path to read manifests from, here it's the full path not only the name of the directory
+        path: '{{path}}'
+      destination:
+        server: https://kubernetes.default.svc
+        # Different namespaces named after the directories
+        namespace: '{{path.basename}}'
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true
