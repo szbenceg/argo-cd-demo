@@ -4,8 +4,10 @@ metadata:
   name: letsencrypt-production
 spec:
   acme:
+    # The ACME server URL
     server: https://acme-v02.api.letsencrypt.org/directory
     email: example@domain.com
+    # Name of a secret used to store the ACME account private key
     privateKeySecretRef:
       name: letsencrypt-production
     solvers:
