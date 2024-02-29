@@ -22,6 +22,10 @@ $ sudo mv kubectl-cert_manager /usr/local/bin
 
 ### Make our cluster to be able to connect to private docker registry
 
+!!! IMPORTANT !!!
+
+The `imagePullSecret` can only reference Secret within the same namespace. More about the topic [link](https://stackoverflow.com/a/76210102/15647017).
+
 ```
 kubectl create secret docker-registry myregistrykey --docker-server=DOCKER_REGISTRY_SERVER --docker-username=DOCKER_USER --docker-password=DOCKER_PASSWORD --docker-email=DOCKER_EMAIL
 ```

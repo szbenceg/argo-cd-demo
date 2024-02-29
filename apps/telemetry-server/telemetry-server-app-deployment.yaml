@@ -12,21 +12,21 @@ spec:
       labels:
         app: telemetry-server
     spec:
+      imagePullSecrets:
+        - name: registry-pull-secret
       containers:
         - name: telemetry-server
           image: szbence/telemetryserver:latest
           ports:
             - containerPort: 8080
-          env:
-            - name: DB_HOST
-              value: postgres
-            - name: DB_PORT
-              value: "5432"
-            - name: DB_NAME
-              value: postgres
-            - name: DB_USERNAME
-              value: postgres
-            - name: DB_PASSWORD
-              value: postgres
-      imagePullSecrets:
-        - name: registry-pull-secret
+          volumeMounts:
+            - name: config-override-volume
+              mountPath: /opt/telemetryserver/conf/application.properties
+              subPath: custom_path
+      volumes:
+        - name: config-override-volume
+          configMap:
+            name: telemetry-server-app-config
+            items:
+              - key: application.properties
+                path: custom_path

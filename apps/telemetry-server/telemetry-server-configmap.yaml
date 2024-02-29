@@ -28,7 +28,7 @@ data:
     spring.rabbitmq.listener.simple.retry.enabled=true
     
     #Signiture verification
-    package.signer.public.key=TelemetryServer/cert/pub-key.pem
+    package.signer.public.key=/opt/ls/NEZZUKK/pub-key.pem
     package.verify.signature=false
     
     #Subsystem url value mapping to address
