@@ -12,11 +12,6 @@ spec:
       labels:
         app: postgres
     spec:
-      initContainers:
-        - name: postgres-init
-          image: 'postgres:16.2-alpine3.19'
-          imagePullPolicy: IfNotPresent
-          command: [ "/bin/sh", "-c", "if [ ! -d /var/lib/postgresql/data ]; then sudo initdb -D /var/lib/postgresql/data; fi" ]
       containers:
         - name: postgres
           image: 'postgres:16.2-alpine3.19'
