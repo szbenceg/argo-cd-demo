@@ -60,3 +60,19 @@ data:
     statistic.cleanup.hour.turningpoint=720
     statistic.cleanup.day.turningpoint=8760
     statistic.cleanup.week.turningpoint=43800
+
+  pub-key.pem: |
+    -----BEGIN PUBLIC KEY-----
+    MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAsMTmbMflxKh5oFqz50Yb
+    Mz9E0xFbqoXiiUrphKKU7ZD5WLUHloS26TP3G1O4K78Zc8FhaDoUj33QmTYku3ic
+    LhJcTGOXfRCAuNh1NwhAo+ywv1zVjlMkUqmEdyfncOYkKYzuBngAbKmEV1U5D230
+    BItA0/epY1pHwiHJDyBK4KCUySJqho8WyyYW7X/NU6r8ej1+WB/G7P6aRxBOWFpK
+    CUJTXk+xXOP+h/+Y2CvY3MSvJI1IDaeNBf2Z3Taep6p0Ma3GWFbx0xHF464MN2oQ
+    BLBQPYUPyLo3zmtz03LjH6WeKgNFVyCbuV5FjEB6DH2U27pHVStaKbOTwzvzwRGz
+    4NgqypBEZJNU1gVRkkOPG8cP8uAAPnM/sEhrhPkMjBkmys9SRJTEetGfG67akoqJ
+    25ExEJ8tzP9vaEK8A80wlbdKiHT8LxxBDfxCqnfK3fAfbkYW0TF5uyy3VwhJojtm
+    Utv+H1Kgo3+Dhcfavneda++8VqnaNlPMrncxpMD+S8vnwzOy+pSiZgQWsZFJ97YZ
+    457Nb+BpSOjD900+JSeP5wNrJcNwjhZn6XF5mJcyK5JlA8SC9n0KypZr/2nN6f/f
+    /DJGxMPYWcptAkdqSOThd0LBYcw2YKghOql73XvdvdDwTAnWXa8Z/GbFeuBR0TI+
+    /cBiGJNERnIznikC770M7E0CAwEAAQ==
+    -----END PUBLIC KEY-----

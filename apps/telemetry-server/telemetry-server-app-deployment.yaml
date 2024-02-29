@@ -21,7 +21,7 @@ spec:
             - containerPort: 8080
           volumeMounts:
             - name: config-override-volume
-              mountPath: /opt/telemetryserver/conf/application.properties
+              mountPath: /opt/telemetryserver/conf/
               subPath: custom_path
       volumes:
         - name: config-override-volume
@@ -29,4 +29,6 @@ spec:
             name: telemetry-server-app-config
             items:
               - key: application.properties
+                path: custom_path
+              - key: pub-key.pem
                 path: custom_path
