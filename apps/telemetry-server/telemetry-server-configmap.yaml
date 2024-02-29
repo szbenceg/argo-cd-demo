@@ -17,7 +17,7 @@ data:
     app.datasource.main.pool-size=30
     
     #Rabbitmq connection params
-    spring.rabbitmq.host=localhost
+    spring.rabbitmq.host=rabbitmq-0.rabbitmq.svc.cluster.local
     spring.rabbitmq.port=5672
     spring.rabbitmq.virtual-host=tmsvhost
     spring.rabbitmq.username=tmsuser
