@@ -22,16 +22,16 @@ spec:
           volumeMounts:
             - name: config-override
               mountPath: /etc/application.properties
-              subPath: application.properties
+              subPath: custom_path
             - name: config-override
               mountPath: /opt/ls/NEZZUKK/pub-key.pem
-              subPath: pub-key.pem
+              subPath: custom_path
       volumes:
         - name: config-override-volume
           configMap:
             name: telemetry-server-app-config
             items:
               - key: application.properties
-                path: application.properties
+                path: custom_path
               - key: pub-key.pem
-                path: pub-key.pem
+                path: custom_path
