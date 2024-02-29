@@ -20,15 +20,18 @@ spec:
           ports:
             - containerPort: 8080
           volumeMounts:
-            - name: config-override-volume
-              mountPath: /opt/telemetryserver/conf/
-              subPath: custom_path
+            - name: config-override
+              mountPath: /etc/application.properties
+              subPath: application.properties
+            - name: config-override
+              mountPath: /opt/ls/NEZZUKK/pub-key.pem
+              subPath: pub-key.pem
       volumes:
         - name: config-override-volume
           configMap:
             name: telemetry-server-app-config
             items:
               - key: application.properties
-                path: custom_path
+                path: application.properties
               - key: pub-key.pem
-                path: custom_path
+                path: pub-key.pem
