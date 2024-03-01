@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: telemetry-server
 spec:
-  replicas: 2
+  replicas: 4
   selector:
     matchLabels:
       app: telemetry-server
