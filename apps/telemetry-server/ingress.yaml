@@ -17,7 +17,7 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: telemetry-server
+                name: telemetry-server-service
                 port:
                   name: http
 #  tls:
