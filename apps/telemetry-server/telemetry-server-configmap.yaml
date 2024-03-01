@@ -7,7 +7,7 @@ data:
     #spring.profiles.active=develop,navdemo
     spring.profiles.active=develop
     
-    server.port=8200
+    server.port=8080
     
     #Postgresql connection params
     app.datasource.main.driver-class-name=org.postgresql.Driver
