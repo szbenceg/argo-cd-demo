@@ -6,7 +6,7 @@ metadata:
     kubernetes.io/ingress.class: nginx
 spec:
   rules:
-    - host: test2.argocd.aimerch.hu
+    - host: test.aimerch.eu
       http:
         paths:
           - pathType: Prefix
