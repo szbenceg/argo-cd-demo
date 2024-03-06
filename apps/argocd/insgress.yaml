@@ -10,7 +10,7 @@ metadata:
     #    cert-manager.io/cluster-issuer: letsencrypt-production
     cert-manager.io/cluster-issuer: letsencrypt-staging-test
 #    service.beta.kubernetes.io/linode-loadbalancer-nodebalancer-id: "548228"
-    service.beta.kubernetes.io/linode-loadbalancer-preserve: "true"
+#    service.beta.kubernetes.io/linode-loadbalancer-preserve: "true"
 spec:
   ingressClassName: nginx
   rules:
