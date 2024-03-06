@@ -1,0 +1,10 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: test-service
+  namespace: test-ingress
+spec:
+  type: ExternalName
+  externalName: telemetry-server-service.telemetry-server.svc.cluster.local
+  ports:
+    - port: 80
