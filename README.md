@@ -36,3 +36,5 @@ kubectl create secret docker-registry myregistrykey --docker-server=DOCKER_REGIS
 To retrieve the ID of the available load balancers and subsequently reuse the same load balancer across different services.
 
 `linode-cli nodebalancers list`
+
+`kubectl describe ingress argocd-ingress -n argocd`
