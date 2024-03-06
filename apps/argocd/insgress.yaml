@@ -7,15 +7,11 @@ metadata:
     kubernetes.io/ingress.class: "nginx"
     nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
     nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
-    #    cert-manager.io/cluster-issuer: letsencrypt-production
-    cert-manager.io/cluster-issuer: letsencrypt-staging-test
-#    service.beta.kubernetes.io/linode-loadbalancer-nodebalancer-id: "548228"
-#    service.beta.kubernetes.io/linode-loadbalancer-preserve: "true"
+    cert-manager.io/cluster-issuer: letsencrypt-production
 spec:
   ingressClassName: nginx
   rules:
-    #    - host: argocd.telemet.works
-    - host: test3.argocd.aimerch.hu
+    - host: kubernetes.telemet.works
       http:
         paths:
           - path: /
@@ -27,6 +23,5 @@ spec:
                   name: https
   tls:
     - hosts:
-        - test3.argocd.aimerch.hu
-  #      secretName: letsencrypt-production
-      secretName: letsencrypt-staging-test
+        - kubernetes.telemet.works
+      secretName: letsencrypt-production
