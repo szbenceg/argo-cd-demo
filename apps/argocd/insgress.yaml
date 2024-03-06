@@ -11,7 +11,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: kubernetes.telemet.works
+    - host: argocd.telemet.works
       http:
         paths:
           - path: /
@@ -23,5 +23,5 @@ spec:
                   name: https
   tls:
     - hosts:
-        - kubernetes.telemet.works
+        - argocd.telemet.works
       secretName: letsencrypt-production
