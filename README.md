@@ -38,3 +38,5 @@ To retrieve the ID of the available load balancers and subsequently reuse the sa
 `linode-cli nodebalancers list`
 
 `kubectl describe ingress argocd-ingress -n argocd`
+
+`kubectl --namespace ingress-nginx get services -o wide -w ingress-nginx-controller`

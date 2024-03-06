@@ -7,7 +7,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: test.aimerch.eu
+    - host: test2.aimerch.eu
       http:
         paths:
           - pathType: Prefix
