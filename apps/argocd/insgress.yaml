@@ -26,5 +26,5 @@ spec:
                   name: https
   tls:
     - hosts:
-        - kubernetes.telemet.works
+        - test3.argocd.aimerch.hu
       secretName: letsencrypt-production
