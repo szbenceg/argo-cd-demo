@@ -13,7 +13,8 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: argocd.telemet.works
+    #    - host: argocd.telemet.works
+    - host: test.argocd.aimerch.hu
       http:
         paths:
           - path: /
