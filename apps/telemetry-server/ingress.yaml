@@ -21,7 +21,7 @@ spec:
               service:
                 name: telemetry-server-service
                 port:
-                  name: http
+                  number: 80
 #  tls:
 #    - hosts:
 #        - kubernetes.telemet.works
