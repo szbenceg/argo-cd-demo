@@ -29,3 +29,10 @@ The `imagePullSecret` can only reference Secret within the same namespace. More 
 ```
 kubectl create secret docker-registry myregistrykey --docker-server=DOCKER_REGISTRY_SERVER --docker-username=DOCKER_USER --docker-password=DOCKER_PASSWORD --docker-email=DOCKER_EMAIL
 ```
+
+### Configure to use the same load balancer
+
+
+To retrieve the ID of the available load balancers and subsequently reuse the same load balancer across different services.
+
+`linode-cli nodebalancers list`
