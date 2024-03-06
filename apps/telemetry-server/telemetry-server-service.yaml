@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: telemetry-server-service
   annotations:
-    service.beta.kubernetes.io/linode-loadbalancer-nodebalancer-id: "542485"
+#    service.beta.kubernetes.io/linode-loadbalancer-nodebalancer-id: "542485"
     service.beta.kubernetes.io/linode-loadbalancer-preserve: "true"
 spec:
   selector:
