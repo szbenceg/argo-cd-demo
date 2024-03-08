@@ -1,0 +1,85 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: gitlab-volume-claim
+  annotations:
+    description: "Gitlab database"
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 30Gi
+  storageClassName: linode-block-storage-retain
+---
+global:
+#  email:
+#    from: <your-email>
+#    reply_to: <your-email>
+#  smtp:
+#    address: <mail-server-address>
+#    authentication: login
+#    enabled: true
+#    password:
+#      key: password
+#      secret: smtp-password  # you need to create this secret before applying
+#    port: 587
+#    starttls_auto: true
+#    user_name: <your-email>
+  edition: ce
+  hosts:
+    domain: telemet.works
+#    externalIP: <your-cluster-public-ip>
+  kas:
+    enabled: false
+  psql:
+    database: gitlab
+    host: postgres.postgres.svc.cluster.local
+    password:
+      secret: postgres-credentials
+      key: POSTGRES_PASSWORD
+    username: postgres
+
+certmanager-issuer:
+  email: bence.szajko@telemetworks.com
+
+redis:
+  storageClass: local-storage
+
+postgresql:
+  install: false
+
+minio:
+#  persistence:
+#    storageClass: local-storage
+#    size: 10Gi
+  volumes:
+    - name: gitlab-data
+      persistentVolumeClaim:
+        claimName: gitlab-volume-claim
+
+prometheus:
+  server:
+#    persistentVolume:
+#      size: 10Gi
+#      storageClass: local-storage
+    volumes:
+      - name: gitlab-data
+        persistentVolumeClaim:
+          claimName: gitlab-volume-claim
+gitlab:
+#  toolbox:
+#    backups:
+#      cron:
+#        enabled: true
+  gitaly:
+#    persistence:
+#      size: 10Gi
+#      storageClass: local-storage
+    volumes:
+      - name: gitlab-data
+        persistentVolumeClaim:
+          claimName: gitlab-volume-claim
+
+gitlab-runner:
+  install: false
