@@ -43,7 +43,7 @@ To retrieve the ID of the available load balancers and subsequently reuse the sa
 
 ### Gitlab installation
 
-```[tmp.yaml](..%2F..%2FWork%2FKubernetes%2Ftmp.yaml)
+```
 helm install gitlab-yt gitlab/gitlab -f tmp.yaml
 ```
 
