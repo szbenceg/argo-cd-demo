@@ -40,43 +40,28 @@ certmanager-issuer:
   email: bence.szajko@telemetworks.com
 
 redis:
-  storageClass: linode-block-storage-retain
+  persistence:
+    size: 10Gi
+    storageClass: linode-block-storage-retain
 
 postgresql:
   install: false
 
 minio:
-  #  persistence:
-  #    storageClass: local-storage
-  #    size: 10Gi
-  volumes:
-    - name: gitlab-data
-      persistentVolumeClaim:
-        claimName: gitlab-volume-claim
+  persistence:
+    size: 10Gi
+    storageClass: linode-block-storage-retain
 
 prometheus:
-  server:
-    #    persistentVolume:
-    #      size: 10Gi
-    #      storageClass: local-storage
-    volumes:
-      - name: gitlab-data
-        persistentVolumeClaim:
-          claimName: gitlab-volume-claim
+  persistence:
+    size: 10Gi
+    storageClass: linode-block-storage-retain
+
 gitlab:
-  #  toolbox:
-  #    backups:
-  #      cron:
-  #        enabled: true
   gitaly:
-    #    persistence:
-    #      size: 10Gi
-    #      storageClass: local-storage
-    volumes:
-      - name: gitlab-data
-        persistentVolumeClaim:
-          claimName: gitlab-volume-claim
+    persistence:
+      size: 10Gi
+      storageClass: linode-block-storage-retain
 
 gitlab-runner:
   install: false
-
