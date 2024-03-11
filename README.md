@@ -40,3 +40,27 @@ To retrieve the ID of the available load balancers and subsequently reuse the sa
 `kubectl describe ingress argocd-ingress -n argocd`
 
 `kubectl --namespace ingress-nginx get services -o wide -w ingress-nginx-controller`
+
+### Gitlab installation
+
+```[tmp.yaml](..%2F..%2FWork%2FKubernetes%2Ftmp.yaml)
+helm install gitlab-yt gitlab/gitlab -f tmp.yaml
+```
+
+```
+helm uninstall gitlab-yt
+```
+
+```
+kubectl get ingress
+```
+
+```
+kubectl describe pods pod-name
+```
+
+```
+kubectl get pv | grep Released | awk '$1 {print$1}' | while read vol; do kubectl delete pv/${vol}; done
+```
+
+
